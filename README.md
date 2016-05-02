@@ -1,5 +1,5 @@
 # [TinyChat](https://github.com/jonmalave/TinyChat)
-A simple chat room driven by jQuery.Ajax and PHP. 
+A simple chat room driven by jQuery(Ajax) and PHP.
 
 ## Acknowledgement
 
