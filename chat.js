@@ -1,4 +1,4 @@
-// --------- # OBJECT MODEL --------- //
+// --------- # OBJECT MODELS --------- //
 
 // input value
 var $input = $('#input');
@@ -6,72 +6,77 @@ var $input = $('#input');
 // user name
 var $user = $('#name');
 
-// --------- # OBJECT CONTROLLER --------- //
+// --------- # EVENT CONTROLS --------- //
 
-// refresh chat messages
-(function refreshChat(){
-	loadMessages('chat.log');
-	setInterval(function(){ 
-		loadMessages('chat.log');
-	}, 3000);
-})();
+// initiate data sync
+$(document).ready(function(){
+	syncData();
+});
 
-// send message with keypress
+// sync data
+function syncData(){
+	setTimeout(function(){ 
+		getData('chat.log');
+	}, 1000);
+}
+
+// post data with keypress event
 $(document).keypress(function(key){	
 	if(key.which === 13 && $input.val() !== ""){
 		if($user.val() === ""){
 			return $('#chat').append('<p>*Username Required</p>')
-				.scrollTop($('#chat').get(0).scrollHeight);	
+				.scrollTop($('#chat').get(-1).scrollHeight);	
 		}		
-		var userMessage = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
-		$('#chat').append(userMessage);
-		sendMessage('send.php', userMessage); 
+		var data = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
+		$('#chat').append(data);
+		postData('send.php', data); 
 		console.log('sent message: ' + $input.val());
-		$input.val('');
-		$('#chat').scrollTop($('#chat').get(0).scrollHeight);				
-		key.preventDefault();
+		$input.val('');	
+		$('#chat').scrollTop($('#chat').prop("scrollHeight"), 0);
+		key.preventDefault();	
 	}
 });
 
-// send message with button
+// post data with click event
 $('#send').click(function(){
 	if($user.val() === ""){
 		return $('#chat').append('<p>*Username Required</p>')
 			.scrollTop($('#chat').get(0).scrollHeight);		
 	}		
-	var userMessage = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
-	$('#chat').append(userMessage);
-	sendMessage('send.php', userMessage); 
+	var data = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
+	$('#chat').append(data);
+	postData('send.php', data); 
 	console.log('sent message: ' + $input.val());
 	$input.val('');
-	$('#chat').scrollTop($('#chat').get(0).scrollHeight);		
+  $('#chat').scrollTop($('#chat').prop("scrollHeight"), 0);
 });
 
-// --------- # DATA CONTOLLER --------- //
+// --------- # DATA CONTROLS --------- //
 
-// submit chat message
-function sendMessage(url, messageValue){
+// post data
+function postData(url, data){
 	$.ajax({
 		url: url,
 		type: 'POST',
 		data: {
-			'message': messageValue
+			'data': data
 		},
 		success: function(data){
-			console.log(data + ' POST success!')
+			console.log('POST success!')	
 		}
 	});		
 }
 
-// load chat messages from database
-function loadMessages(url){	
+// get data
+function getData(url){	
 	$.ajax({
 		url: url,
 		dataType: 'text',
 		success: function(data){
 			$('#chat').html(data);
+			console.log('GET success!')
+  	  $('#chat').scrollTop($('#chat').prop("scrollHeight"), 0);	
 		}
 	});
-	console.log('chat refreshed!');
-	$('#chat').scrollTop($('#chat').get(0).scrollHeight);		
+	syncData();
 }
