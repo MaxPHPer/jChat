@@ -48,6 +48,11 @@
 	height: 20%;
 	margin-top: 1%;	
 }
+#clear {
+	font-size: 20px;
+	width: 35%; 
+	margin-left: 1%;
+}
 footer {
 	text-align: center; 
 	margin-top: 8%;
