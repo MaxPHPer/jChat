@@ -49,6 +49,11 @@ $('#send').click(function(){
   $('#chat').scrollTop($('#chat').prop("scrollHeight"), 0);
 });
 
+// clear data with click event
+$('#clear').click(function(){
+	postData('clear.php'); 
+});
+
 // --------- # DATA CONTROLS --------- //
 
 // post data
@@ -59,6 +64,17 @@ function postData(url, data){
 		data: {
 			'data': data
 		},
+		success: function(data){
+			console.log('POST success!')	
+		}
+	});		
+}
+
+// clear data
+function clearData(url){
+	$.ajax({
+		url: url,
+		type: 'POST',
 		success: function(data){
 			console.log('POST success!')	
 		}
