@@ -28,7 +28,6 @@ $(document).keypress(function(key){
 				.scrollTop($('#chat').get(-1).scrollHeight);	
 		}		
 		var data = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
-		$('#chat').append(data);
 		postData('send.php', data); 
 		console.log('sent message: ' + $input.val());
 		$input.val('');	
@@ -44,7 +43,6 @@ $('#send').click(function(){
 			.scrollTop($('#chat').get(0).scrollHeight);		
 	}		
 	var data = '<p>' + '<b>' + $user.val() + '</b>' + ': ' + $input.val() + '</p>';
-	$('#chat').append(data);
 	postData('send.php', data); 
 	console.log('sent message: ' + $input.val());
 	$input.val('');
@@ -71,7 +69,7 @@ function postData(url, data){
 function getData(url){	
 	$.ajax({
 		url: url,
-		dataType: 'text',
+		type: 'GET',
 		success: function(data){
 			$('#chat').html(data);
 			console.log('GET success!')
