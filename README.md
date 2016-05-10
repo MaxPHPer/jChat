@@ -1,5 +1,5 @@
 # [jChat](https://github.com/jonmalave/jChat)
-Lightweight chatroom built using jQuery.ajax and PHP.
+lightweight chatroom built using jQuery.ajax and PHP.
 
 ## Acknowledgement
 
