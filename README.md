@@ -1,6 +1,6 @@
-# [TinyChat](https://github.com/jonmalave/TinyChat)
-jQuery(Ajax) and PHP driven Chat room app.
+# [jChat](https://github.com/jonmalave/jChat)
+Chat room app powered by jQuery(Ajax) and PHP.
 
 ## Acknowledgement
 
-TinyChat created by [Jon Malave](http://jonmalave.com) | jQuery by [jQuery Foundation](https://jquery.org/team/) | PHP by [PHP Group](https://secure.php.net/) 
+jChat created by [Jon Malave](http://jonmalave.com) | jQuery by [jQuery Foundation](https://jquery.org/team/) | PHP by [PHP Group](https://secure.php.net/) 
