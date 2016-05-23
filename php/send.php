@@ -1,8 +1,8 @@
 <?php
-	// cache POST data
-	$message = $_REQUEST['message'];
+	// cache data
+	$message = $_REQUEST['data'];
 	
-	// write data to database
+	// write data
 	function writeData($filePath, $data){
 		$data = PHP_EOL . $data;
 		$chatLog = fopen($filePath, "a") or die("Unable to open file!");
@@ -11,7 +11,7 @@
 		return 'done';
 	}
 
-	// write data
-	$write = writeData('chat.log', $message);
+	// invoke write data
+	$write = writeData('../chat.log', $message);
 	echo $write;
 ?>

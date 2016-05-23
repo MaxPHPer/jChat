@@ -8,6 +8,6 @@
 	}
 
 	// invoke clear data
-	$clear= clearData('chat.log');
+	$clear = clearData('../chat.log');
 	echo $clear;
 ?>

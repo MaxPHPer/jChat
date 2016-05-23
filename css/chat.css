@@ -2,10 +2,10 @@
 	text-align: center; 
 	font-weight: bold;
 	margin-top: 1%;
-	font-size: 30px;
+	font-size: 40px;
 }
 #main {
-	width: 500px; 
+	max-width: 500px; 
 	height: 200px; 		
 	margin: auto;
 	text-align: center;
@@ -27,37 +27,39 @@
 }
 #input {
 	font-size: 20px;
-	width: 78%; 
+	width: 100%; 
 	height: 20%;
-	margin-top: 1%;	
-}
-#send {	
-	font-size: 20px;	
-	width: 20%; 
-	height: 20%;	
-	margin-left: 1%;
-}
-#user {
-	font-size: 20px;
 	margin-top: 1%;
-	text-align: left;	
 }
-#user input {
+#username {
 	font-size: 20px;
-	width: 40%; 
+	text-align: left;
+	margin-top: 1%;	 
 	height: 20%;
-	margin-top: 1%;	
+	float: center;
 }
-#clear {
-	font-size: 20px;
-	width: 35%; 
-	margin-left: 1%;
+#username-input {
+	width: 30%;	
+}
+/* For devices smaller than 720px */
+@media (max-width: 720px) {
+	#username-input {
+		width: 52%;	
+	}
 }
 footer {
 	text-align: center; 
-	margin-top: 8%;
-	font-size: 20px;
+	margin-top: 10%;
+	font-size: 20px;	
 }
+/* For devices smaller than 720px */
+@media (max-width: 720px) {
+	footer {
+		text-align: center; 
+		margin-top: 30%;
+		font-size: 16px;	}
+}
+
 footer .fa {
 	position:relative;			
 }

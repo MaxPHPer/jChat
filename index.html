@@ -2,39 +2,33 @@
 <html lang="en">
 	<head>
 		<!-- Basic Page Needs -->		
-		<title>TinyChat</title>
-		<meta name="description" content="A simple chat room driven by jQuery.ajax and PHP.">
+		<title>jChat</title>
+		<meta name="description" content="lightweight chatroom built using jQuery.ajax and PHP.">
 		<meta name="author" content="Created by Jon Malave">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- Cache Settings -->
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-		<meta http-equiv="Pragma" content="no-cache"/>
-		<meta http-equiv="Expires" content="0"/>		
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		<link rel="stylesheet" href="chat.css">
+		<link rel="stylesheet" href="css/chat.css">
 	</head>
 	<body>
-		<p id="title">TinyChat</p>	
-		
+		<p id="title">jChat</p>	
+
 		<!-- HTML -->
 		<div id="main">
-			<div id="chat"></div>
+			<div id="chat"><p>Loading Chat Log...</p></div>
 			<input id="input" placeholder="new message">
-			<button id="send">Send</button>
-			<p id="user">*Username: <input id="name" placeholder="enter username"> <button id="clear">Clear Chat</button> </p> 
+			<p id="username"><i class="fa fa-user"> </i> Username: <input id="username-input" placeholder="username"></p>			
 		</div>
 
+		<!-- Footer -->	
+		<footer>
+			<p>&copy; Created by <a style ="text-decoration: none;" href="http://jonmalave.com" target="_blank">Jon Malave.</a> | <a href="https://twitter.com/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-twitter"></a> | <a href="https://www.linkedin.com/in/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-linkedin"></a> | <a href="https://github.com/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-github"></a></p>	
+		</footer>
+		
 		<!-- JavaScript-->
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-		<script src="chat.js"></script>
+		<script src="js/chat.js"></script>		
 	</body>
-	
-	<!-- Footer -->	
-	<footer>
-		<p>&copy; Created by <a style ="text-decoration: none;" href="http://jonmalave.com" target="_blank">Jon Malave.</a> | <a href="https://twitter.com/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-twitter"></a> | <a href="https://www.linkedin.com/in/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-linkedin"></a> | <a href="https://github.com/jonmalave" target="_blank" style="text-decoration: none" class="fa fa-github"></a></p>	
-	</footer>
 </html>	
