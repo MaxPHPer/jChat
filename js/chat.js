@@ -15,7 +15,7 @@ syncData();
 function syncData(){
 	setTimeout(function(){ 
 		getData('chat.log?' + Math.random());
-	}, 3000);
+	}, 2000);
 }
 
 // post data
